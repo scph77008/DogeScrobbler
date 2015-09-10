@@ -1,4 +1,5 @@
 <?
+//check git
 setcookie('login', $_SESSION['login']); 
 setcookie('pass', $_SESSION['pass']);
 setcookie('auth', $_SESSION['auth']);
