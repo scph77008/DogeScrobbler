@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DogeScrobbler</title>
+	<script src="/js/jquery-1.11.3.js"></script>
+	<script src="/js/scrobbler.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<header>
+
+	<form method="POST" action="/.php">
+		<div class="input_text">
+			<label for="date" class='title'> Выберите дату: </label>
+		</div>
+
+		<div class="input_text">
+			<input type='date' id="date" class='input_input'  name='date'>
+		</div>
+
+		<br>
+
+		<div class="input_text">
+			<label for="tracks" class='title'> Количество треков (1-200): </label>
+		</div>
+
+		<div class="input_text">
+			<input type="text"  id="tracks" class='input_input' name='count' value="200">
+		</div>
+
+		<br>
+
+		<div class="input_text">
+			<label for="user" class='title'> Пользователь: </label>
+		</div>
+
+		<div class="input_text">
+			<input type="text" id="user" class='input_input'  name='user' value="iHappiness">
+			<br>
+			<input type="button" id="submit" class="input_input" name="submit" value="Wow!"/>
+		</div>
+
+	</form>
+</header>
+
+</body>
+</html>
