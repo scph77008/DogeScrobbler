@@ -1,4 +1,4 @@
-/*
+
 .input_input {
 	display: table-cell;
 	width:   175px;
@@ -31,7 +31,7 @@ header {
 	margin-top:       5px;
 
 	background-color: rgba(211, 186, 117, 0.45);
-	font:             bold 14px;
+	font: bold 10px;
 }
 
 .artist, .album, .album_logo, .date, .track {
@@ -40,7 +40,7 @@ header {
 	font-size:    xx-large;
 	font-family:  'Roboto', sans-serif;
 }
-
+/*
 body {
 	/!* background: url(doge.jpg);*!/
 }*/
