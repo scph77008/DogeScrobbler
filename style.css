@@ -1,5 +1,4 @@
-
-.input_input {
+/*.input_input {
 	display: table-cell;
 	width:   175px;
 	height:  24px;
@@ -40,7 +39,7 @@ header {
 	font-size:    xx-large;
 	font-family:  'Roboto', sans-serif;
 }
-/*
+
 body {
 	/!* background: url(doge.jpg);*!/
 }*/
