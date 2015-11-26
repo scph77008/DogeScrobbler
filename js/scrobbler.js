@@ -35,35 +35,22 @@ $(document).ready(function ($)
 				$.each((data.recenttracks.track), function(id, track)
 				{
 
-
-					$album_image = track['image'][2]['#text']; // large, 174x174px
-					$album_title = track['album']['#text'];
-					$track_artist = track['artist']['#text'];
-					$track_title = track['name'];
+					$image = track['image'][3]['#text']; // large, 174x174px
+					$album = track['album']['#text'];
+					$artist = track['artist']['#text'];
+					$track = track['name'];
 					$date = track['date']['#text']; // example: "23 Nov 2015, 20:39"
 					$dateUTC = track['date']['uts']; // example: "1448311164"
 
 					if ($prev_album_title == $album_title)
 					{
-						//AddTrackToAlbum
+						AddTrackToAlbum($album, $track);
 					}
 					else
 					{
-						//GenerateNewAlbum
+						GenerateNewAlbum($artist, $album_title, $image);
 						$prev_album_title = $album_title;
 					}
-
-		/*
-						$charts.append(
-						'<div class="track">' +
-							'<div class="album_logo"><img src=' + $album_image + '/></div>' +
-							'<div class="artist">' + $track_artist + '</div>' +
-							'<div class="track">' + $track_title + '</div>' +
-							'<div class="album">' + $album_title + '</div>' +
-							'<div class="date">' + $date + '</div>' +
-						'</div>');
-		*/
-
 				});
 
 			}
@@ -73,12 +60,21 @@ $(document).ready(function ($)
 
 function GenerateNewAlbum(artist_name, album_name, image_src)
 {
-
+	$('.charts').append(
+	'<div class="album" data-album-title='+album_name+' style="width: 750px; height: 400px; margin: auto;" >' +
+		'<div class="album-logo-tracks" style="height:300px; width:100%;">'+
+			'<div class="album-logo" style="height:300px;  float: left;"> '+'<img src='+image_src+'/>'+'	</div>'+
+			'<div class="album-track" style="height: 300px;  float: right; ">	</div> '+
+		'</div>'+
+		'<div class="artist-title"> '+album_name +' - ' + artist_name+' </div>'+
+	'</div>');
 };
 
 function AddTrackToAlbum(album, track)
 {
-
+	$('.album:last').find('.album-track').append(
+		'<div class="track" style="width:100%;">' + track + '</div>'
+		);
 };
 
 
