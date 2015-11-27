@@ -22,34 +22,34 @@ $(document).ready(function ($)
 			},
 			success: function (data)
 			{
-				var $album_image;
-				var $album_title;
-				var $track_artist;
-				var $track_title;
+				var $image;
+				var $album;
+				var $artist;
+				var $track;
 				var $date;
 				var $dateUTC;
 				var $charts = $('.charts');
 
-				var $prev_album_title = '';
+				var $prev_album = '';
 //				console.log(data.recenttracks);
 				$.each((data.recenttracks.track), function(id, track)
 				{
 
-					$image = track['image'][3]['#text']; // large, 174x174px
+					$image = track['image'][3]['#text']; // extralarge, 300x300px
 					$album = track['album']['#text'];
 					$artist = track['artist']['#text'];
 					$track = track['name'];
 					$date = track['date']['#text']; // example: "23 Nov 2015, 20:39"
 					$dateUTC = track['date']['uts']; // example: "1448311164"
 
-					if ($prev_album_title == $album)
+					if ($prev_album == $album)
 					{
 						AddTrackToAlbum($album, $track);
 					}
 					else
 					{
-						GenerateNewAlbum($artist, $album_title, $image);
-						$prev_album_title = $album;
+						GenerateNewAlbum($artist, $album, $image);
+						$prev_album = $album;
 					}
 				});
 
