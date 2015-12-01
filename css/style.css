@@ -1,3 +1,30 @@
+/*Своя ерунда */
+.form
+{
+	width: 500px;
+	margin: 50px auto;
+	height: 390px;
+	padding: 10px;
+}
+
+.form-main {
+	width: 520px;
+	margin: auto;
+	height: 410px;
+	background-color: wheat;
+}
+
+
+/* Переопределение materialize.css */
+label {
+	font-size: 1.6rem;
+}
+
+input[type=text]
+{
+	font-size: 1.5rem;
+}
+/* Совсем старое */
 /*.input_input {
 	display: table-cell;
 	width:   175px;

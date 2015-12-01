@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>DogeScrobbler</title>
-	<script src="js/jquery-1.11.3.js"></script>
-	<script src="js/scrobbler.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic' rel='stylesheet' type='text/css'>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <meta charset="UTF-8">
+    <title>DogeScrobbler</title>
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/scrobbler.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
+<!--
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+-->
+</body>
+</html>
 <header>
+    <div class="form-main">
+        <form class="form" method="POST" action="/.php">
+            <div class="input_text">
+                <label for="date" class='title'> Выберите дату: </label>
+            </div>
 
-	<form method="POST" action="/.php">
-		<div class="input_text">
-			<label for="date" class='title' > Выберите дату: </label>
-		</div>
+            <div class="input_text">
+                <input type='date' id="date" class='input_input' name='date' value="2015-11-22">
+            </div>
 
-		<div class="input_text">
-			<input type='date' id="date" class='input_input' name='date' value="2015-11-22">
-		</div>
+            <br>
 
-		<br>
+            <div class="input_text">
+                <label for="limit" class='title'> Количество треков (1-200): </label>
+            </div>
 
-		<div class="input_text">
-			<label for="limit" class='title'> Количество треков (1-200): </label>
-		</div>
+            <div class="input_text">
+                <input type="text" id="limit" class='input_input' name='count' value="200">
+            </div>
 
-		<div class="input_text">
-			<input type="text" id="limit" class='input_input' name='count' value="200">
-		</div>
+            <br>
 
-		<br>
+            <div class="input_text">
+                <label for="user" class='title'> Пользователь: </label>
+            </div>
 
-		<div class="input_text">
-			<label for="user" class='title'> Пользователь: </label>
-		</div>
+            <div class="input_text">
+                <input type="text" id="user" class='input_input' name='user' value="NemiSekira">
+                <br>
+                <input type="button" id="submit" class="input_input" name="submit" value="Wow!"/>
+            </div>
 
-		<div class="input_text">
-			<input type="text" id="user" class='input_input' name='user' value="NemiSekira">
-			<br>
-			<input type="button" id="submit" class="input_input" name="submit" value="Wow!"/>
-		</div>
+        </form>
+    </div>
 
-	</form>
 </header>
 <div class="charts">
 

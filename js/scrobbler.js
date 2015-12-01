@@ -42,15 +42,13 @@ $(document).ready(function ($)
 					$date = track['date']['#text']; // example: "23 Nov 2015, 20:39"
 					$dateUTC = track['date']['uts']; // example: "1448311164"
 
-					if ($prev_album == $album)
-					{
-						AddTrackToAlbum($album, $track);
-					}
-					else
+					if ($prev_album != $album)
 					{
 						GenerateNewAlbum($artist, $album, $image);
 						$prev_album = $album;
 					}
+					AddTrackToAlbum($album, $track);
+
 				});
 
 			}
