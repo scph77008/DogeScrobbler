@@ -1,12 +1,19 @@
 /*Своя ерунда */
+.album
+{
+	width: 750px; height: 400px; margin: auto;
+}
+.track
+{
+
+}
+/*
 .form
 {
-	width: 500px;
 	margin: 50px auto;
-	height: 390px;
-	padding: 10px;
-}
 
+}
+/*
 .form-main {
 	width: 520px;
 	margin: auto;
@@ -14,6 +21,7 @@
 	background-color: wheat;
 }
 
+*/
 
 /* Переопределение materialize.css */
 label {

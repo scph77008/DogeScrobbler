@@ -59,19 +59,19 @@ $(document).ready(function ($)
 function GenerateNewAlbum(artist_name, album_name, image_src)
 {
 	$('.charts').append(
-	'<div class="album" data-album-title='+album_name+' style="width: 750px; height: 400px; margin: auto;" >' +
-		'<div class="album-logo-tracks" style="height:300px; width:100%;">'+
-			'<div class="album-logo" style="height:300px;  float: left;"> '+'<img src='+image_src+'/>'+'	</div>'+
-			'<div class="album-track" style="height: 300px;  float: right; ">	</div> '+
+	'<div class="album z-depth-2 col s6 center row" data-album-title='+album_name+' style="" >' +
+		'<div class="album-logo-tracks s12 row" style="height:300px; width:100%; padding: 10px;">'+
+			'<div class="album-logo col s5" style="height:300px;  float: left;"> '+'<img class="circle responsive-img" src='+image_src+'/>'+'	</div>'+
+			'<div class="album-track col s7" style="height: 300px;  float: right; text-align: left;	padding-top: 0.5rem;"></div> '+
 		'</div>'+
-		'<div class="artist-title"> '+album_name +' - ' + artist_name+' </div>'+
-	'</div>');
+		'<div class="artist-title row s12"> <span class="">'+album_name +' - ' + artist_name+'</span></div>'+
+	'</div><br>');
 };
 
 function AddTrackToAlbum(album, track)
 {
 	$('.album:last').find('.album-track').append(
-		'<div class="track" style="width:100%;">' + track + '</div>'
+		'<div class="track col s7" style="width:100%;">' + track + '</div>'
 		);
 };
 
