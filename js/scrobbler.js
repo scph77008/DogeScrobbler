@@ -1,5 +1,6 @@
 $(document).ready(function ($)
 {
+
 	//$('#submit').on('click', function ()
 //		{
 		//alert('wow!');
@@ -31,7 +32,6 @@ $(document).ready(function ($)
 				var $charts = $('.charts');
 
 				var $prev_album = '';
-//				console.log(data.recenttracks);
 				$.each((data.recenttracks.track), function(id, track)
 				{
 
@@ -44,35 +44,52 @@ $(document).ready(function ($)
 
 					if ($prev_album != $album)
 					{
-						GenerateNewAlbum($artist, $album, $image);
+						generateNewAlbum($artist, $album, $image);
 						$prev_album = $album;
 					}
-					AddTrackToAlbum($album, $track);
+					addTrackToAlbum($album, $track);
 
 				});
 
+				resizeAlbums();
 			}
 		});
 //	});
+
 });
 
-function GenerateNewAlbum(artist_name, album_name, image_src)
+
+function generateNewAlbum(artist_name, album_name, image_src)
 {
 	$('.charts').append(
-	'<div class="album z-depth-2 col s6 center row" data-album-title='+album_name+' style="" >' +
-		'<div class="album-logo-tracks s12 row" style="height:300px; width:100%; padding: 10px;">'+
+	'<div class="album flow-text z-depth-2 col s6 center row" data-album-title='+album_name+'>' +
+		'<div class="album-logo-tracks s12 row">'+
 			'<div class="album-logo col s5" style="height:300px;  float: left;"> '+'<img class="circle responsive-img" src='+image_src+'/>'+'	</div>'+
 			'<div class="album-track col s7" style="height: 300px;  float: right; text-align: left;	padding-top: 0.5rem;"></div> '+
 		'</div>'+
-		'<div class="artist-title row s12"> <span class="">'+album_name +' - ' + artist_name+'</span></div>'+
+		'<div class="artist-title row s12">'+album_name +' - ' + artist_name+'</div>'+
 	'</div><br>');
 };
 
-function AddTrackToAlbum(album, track)
+function addTrackToAlbum(album, track)
 {
 	$('.album:last').find('.album-track').append(
-		'<div class="track col s7" style="width:100%;">' + track + '</div>'
+		'<div class="col s7 track flow-text" style="width:100%;">' + track + '</div>'
 		);
 };
 
+function resizeAlbums()
+{
+	$('.album').each(function ()
+	{
+		var $heigth_sum = 0;
+		$(this).children('.album-logo-tracks').children('.album-track').children('.track').each(function ()
+		{
+			$heigth_sum += parseInt($(this).css('height'));
+		});
 
+		$(this).css({'height': $heigth_sum+120}, {'min-height': '400px'});
+		$(this).children('.album-logo-tracks').css({'height': $heigth_sum}, {'min-height': '400px'});
+	});
+
+}

@@ -1,11 +1,35 @@
 /*Своя ерунда */
 .album
 {
-	width: 750px; height: 400px; margin: auto;
+	width: 750px;
+	margin: auto;
+	min-height: 400px !important;
 }
 .track
 {
+	padding: 2px 5px !important;
+}
+.track:hover
+{
+	font-weight: 400;
+}
 
+.album-logo-tracks
+{
+	height:300px;
+	width:100%;
+	padding: 10px;
+}
+
+.artist-title
+{
+	padding-top: 10px;
+	font-size: xx-large;
+	font-weight: 300;
+}
+.artist-title:hover
+{
+	font-weight: 400;
 }
 /*
 .form
