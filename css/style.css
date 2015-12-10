@@ -1,4 +1,9 @@
 /*Своя ерунда */
+.album, .form
+{
+	background-color: rgb(233, 220, 167);
+
+}
 .album
 {
 	width: 750px;
@@ -98,7 +103,8 @@ header {
 	font-size:    xx-large;
 	font-family:  'Roboto', sans-serif;
 }
-
+*/
 body {
-	/!* background: url(doge.jpg);*!/
-}*/
+	 background: url('../doge.jpg') no-repeat;
+	background-attachment: fixed;
+}
