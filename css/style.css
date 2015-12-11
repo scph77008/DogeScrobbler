@@ -1,12 +1,12 @@
-/*Своя ерунда */
+/*пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 .album, .form
 {
-	background-color: rgb(233, 220, 167);
-
+	/*background-color: rgb(233, 220, 167);*/
+	background-color: white;
+	width: 750px;
 }
 .album
 {
-	width: 750px;
 	margin: auto;
 	min-height: 400px !important;
 }
@@ -52,7 +52,7 @@
 
 */
 
-/* Переопределение materialize.css */
+/* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ materialize.css */
 label {
 	font-size: 1.6rem;
 }
@@ -61,7 +61,7 @@ input[type=text]
 {
 	font-size: 1.5rem;
 }
-/* Совсем старое */
+/* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
 /*.input_input {
 	display: table-cell;
 	width:   175px;
@@ -103,8 +103,9 @@ header {
 	font-size:    xx-large;
 	font-family:  'Roboto', sans-serif;
 }
-*/
+*//*
 body {
 	 background: url('../doge.jpg') no-repeat;
 	background-attachment: fixed;
 }
+*/

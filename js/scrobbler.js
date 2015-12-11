@@ -32,9 +32,8 @@ $(document).ready(function ($)
 				var $charts = $('.charts');
 
 				var $prev_album = '';
-				$.each((data.recenttracks.track), function(id, track)
+				$.each((data.recenttracks.track), function(track)
 				{
-
 					$image = track['image'][3]['#text']; // extralarge, 300x300px
 					$album = track['album']['#text'];
 					$artist = track['artist']['#text'];
