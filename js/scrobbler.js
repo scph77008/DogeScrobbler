@@ -1,9 +1,8 @@
 $(document).ready(function ($)
 {
 
-	//$('#submit').on('click', function ()
-//		{
-		//alert('wow!');
+	$('#submit').on('click', function ()
+		{
 
 		var $user      = $('#user').val();
 		var $limit     = $('#limit').val();
@@ -32,7 +31,7 @@ $(document).ready(function ($)
 				var $charts = $('.charts');
 
 				var $prev_album = '';
-				$.each((data.recenttracks.track), function(track)
+				$.each((data.recenttracks.track), function(id, track)
 				{
 					$image = track['image'][3]['#text']; // extralarge, 300x300px
 					$album = track['album']['#text'];
@@ -53,20 +52,32 @@ $(document).ready(function ($)
 				resizeAlbums();
 			}
 		});
-//	});
+	});
 
+	$(".track").on({
+		mouseenter: function () {
+			console.log('1');
+			$(this).addClass('z-depth-1')
+		},
+		mouseleave: function () {
+			$(this).removeClass('z-depth-1')
+		}
+	});
 });
+
+
+
 
 
 function generateNewAlbum(artist_name, album_name, image_src)
 {
 	$('.charts').append(
 	'<div class="album flow-text z-depth-2 col s6 center row" data-album-title='+album_name+'>' +
-		'<div class="album-logo-tracks s12 row">'+
+	'<div class="artist-title row s12">'+album_name +' - ' + artist_name+'</div>'+
+	'<div class="album-logo-tracks s12 row">'+
 			'<div class="album-logo col s5" style="height:300px;  float: left;"> '+'<img class="circle responsive-img" src='+image_src+'/>'+'	</div>'+
 			'<div class="album-track col s7" style="height: 300px;  float: right; text-align: left;	padding-top: 0.5rem;"></div> '+
 		'</div>'+
-		'<div class="artist-title row s12">'+album_name +' - ' + artist_name+'</div>'+
 	'</div><br>');
 };
 

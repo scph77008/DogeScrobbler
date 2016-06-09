@@ -10,53 +10,53 @@
 
 </head>
 <body style="background: url(doge.jpg)">
-	
+
 <?php
 	date_default_timezone_set('UTC');
 ?>
 
 <form method="POST">
 	<div id="header">
-			
+
 		<div class="input_text" >
 			<font class = 'title' > Выберите дату: </font>
 		</div>
 
-		<div class="input_text"> 
-			<input class='input_input' type='date' name='cal'> 
+		<div class="input_text">
+			<input class='input_input' type='date' name='cal'>
 		</div>
-		
+
 		<br>
 
 		<div class="input_text" >
 			<font class = 'title' > Количество треков (1-200): </font>
 		</div>
 
-		<div class="input_text"> 
+		<div class="input_text">
 			<input class='input_input' type="text" name='count' value="200">
 		</div>
-	
+
 		<br>
 
-		<div class="input_text" > 
+		<div class="input_text" >
 			<font class = 'title' > Пользователь: </font>
 		</div>
 
-		<div class="input_text"> 
+		<div class="input_text">
 			<input class='input_input' type="text" name='user' value="iHappiness"> <br>
-			<input class='input_input' type="submit" id='but' name='submit' style="margin-top: 3px"> 
+			<input class='input_input' type="submit" id='but' name='submit' style="margin-top: 3px">
 		</div>
 	</div>
-</form>	
+</form>
 
 <?php
-	if ($_POST['submit']) 
+	if ($_POST['submit'])
 	{
 
 	$date_from = strtotime($_POST['cal']);
 	$date_to = $date_from+60*60*24;
-		
-	echo "<h3 align='center'> 
+
+	echo "<h3 align='center'>
 		За " . date("d/m/Y", $date_from) . "</h3>";
 	$request = file_get_contents('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' . $_POST['user'] . '&limit=' . $_POST['count'] . '&from=' . $date_from . '&to=' . $date_to . '&api_key=2417947c57e2d0cde512441710dcb29f');
 
@@ -75,9 +75,9 @@
 
 		  // $charts_screen .= $track->artist . "\t" . $track->album . "\t" . $track->name . " " . date("d/m/Y H:i:s", strtotime($track->date)+60*60*3) . ")<br>";
 		?>
-		
+
 		<div class='charts'>
-			<div class="album_logo" > 
+			<div class="album_logo" >
 			<img src='<?=$track->image?>'>
 			</div>
 
@@ -85,15 +85,15 @@
 				&nbsp;<?=$track->artist?> —
 			</div>
 
-			<div class="track" > 
+			<div class="track" >
 				&nbsp;<?=$track->name?>&nbsp;(
 			</div>
 
-			<div class="album" >  
+			<div class="album" >
 					<?=$track->album?>)
 			</div>
 
-			<div class="date" > 
+			<div class="date" >
 				&nbsp;<?=date("H:i", $time)?>
 			</div>
 		</div>
@@ -105,17 +105,17 @@
  	<div class="charts">
 		<?//echo $charts_screen;?>
 	</div>
-	
+
 	<?	$file = fopen('C:/Users/scph77008/Desktop/'.date("d-m-Y", $date_from).'.scrobbler.log', 'w');
 	fwrite($file, $charts);
 	fclose($file);
-	
+
 	?>
 		<script type="text/javascript"> alert ("Работает!") </script>
 	<?
 }
 
-?>	
+?>
 
 </body>
 </html>

@@ -14,10 +14,6 @@
 {
 	padding: 2px 5px !important;
 }
-.track:hover
-{
-	font-weight: 400;
-}
 
 .album-logo-tracks
 {
@@ -32,10 +28,7 @@
 	font-size: xx-large;
 	font-weight: 300;
 }
-.artist-title:hover
-{
-	font-weight: 400;
-}
+
 /*
 .form
 {
