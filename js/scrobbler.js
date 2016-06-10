@@ -46,7 +46,7 @@ var Album = (function () {
         albumElement.className = 'album center col row flow-text z-depth-2 ';
         // Блок названия
         var albumNameElement = document.createElement('div');
-        albumNameElement.className = 'album s12 center row col'; // flow-text z-depth-2 
+        albumNameElement.className = 'title s12 center row col'; // flow-text z-depth-2 
         albumNameElement.innerText = this.name + ' - ' + this.artist;
         albumElement.appendChild(albumNameElement);
         // Левая колонка
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var album = null;
                 if (track.album != previousAlbum) {
                     previousAlbum = track.album;
-                    album = new Album(track.artist, track.album, dataTrack.image[IMAGE_LARGE]['#text']);
+                    album = new Album(track.artist, track.album, dataTrack.image[IMAGE_EXTRALARGE]['#text']);
                     album.generateAlbumElement();
                     chart.appendAlbum(album);
                     chart.lastAlbum = album;

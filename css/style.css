@@ -2,6 +2,10 @@
   width: 70%;
   padding-bottom: 20px;
 }
+.album .title {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
 .album .left-column {
   float: left;
 }
@@ -9,9 +13,10 @@
   border-radius: 50%;
   transition: all 200ms cubic-bezier(0.47, 0, 0.745, 0.715);
   transition-delay: 2s;
+  width: 90%;
 }
 .album .left-column img.logo:hover {
-  border-radius: 0;
+  border-radius: 5px;
   transition: all 400ms cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 .album .track:hover {
