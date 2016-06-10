@@ -1,5 +1,6 @@
 'use strict';
 /// <reference path="jquery.d.ts" />
+
 class Scrobbler
 {
 	method:string;
@@ -38,6 +39,7 @@ class Chart
 	{
 		this.element.appendChild(album.element);
 	}
+
 }
 /**
  *  @param any element
@@ -64,7 +66,7 @@ class Album
 	{
 		// Блок альбома
 		let albumElement = document.createElement('div');
-		albumElement.className = 'album s12 center col row flow-text z-depth-2 ';
+		albumElement.className = 'album center col row flow-text z-depth-2 ';
 
 		// Блок названия
 		let albumNameElement = document.createElement('div');
@@ -80,7 +82,7 @@ class Album
 		// Обложка
 		let albumImgElement = document.createElement('img');
 		albumImgElement.src = this.image;
-		albumImgElement.className = 'circle responsive-img';
+		albumImgElement.className = 'logo circle responsive-img';
 		albumLogoElement.appendChild(albumImgElement);
 
 		// Правая колонка
@@ -135,7 +137,8 @@ document.addEventListener("DOMContentLoaded", function ()
 	let ajaxParamsArray = {
 		method : scrobbler.method,
 		user   : 'ihappiness',
-		limit  : 50,
+		//todo а вот тут не забыть бы доделать
+		limit  : 30,
 		from   : 1433924359,
 		to     : 1435924359,
 		api_key: scrobbler.apiKey,
@@ -160,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function ()
 			// Success!
 			var data = JSON.parse(ajaxRequest.responseText);
 			let previousAlbum = '';
-			for (var i = 0; i <= data.recenttracks.track.length; i++)
+			for (var i = 0; i < data.recenttracks.track.length; i++)
 			{
 				let dataTrack = data.recenttracks.track[i];
 				let track = new Track(dataTrack.artist['#text'], dataTrack.album['#text'], dataTrack.name);
@@ -182,6 +185,7 @@ document.addEventListener("DOMContentLoaded", function ()
 				track.generateElement();
 				album.appendTrack(track);
 			}
+
 		}
 		else
 		{
