@@ -1,7 +1,10 @@
 'use strict';
 /// <reference path="jquery.d.ts" />
+var IMAGE_SMALL = 0; // 34x34
+var IMAGE_MEDIUM = 1; // 64x64
+var IMAGE_LARGE = 2; // 174x174px
+var IMAGE_EXTRALARGE = 3; // 300x300px
 var Scrobbler = (function () {
-    // var IMAGE_EXTRALARGE = 3; // 300x300px
     function Scrobbler() {
         this.method = 'user.getrecenttracks';
         this.apiKey = '2417947c57e2d0cde512441710dcb29f';
@@ -119,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var album = null;
                 if (track.album != previousAlbum) {
                     previousAlbum = track.album;
-                    album = new Album(track.artist, track.album, dataTrack.image[3]['#text']);
+                    album = new Album(track.artist, track.album, dataTrack.image[IMAGE_LARGE]['#text']);
                     album.generateAlbumElement();
                     chart.appendAlbum(album);
                     chart.lastAlbum = album;

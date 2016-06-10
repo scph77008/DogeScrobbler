@@ -1,5 +1,9 @@
 'use strict';
 /// <reference path="jquery.d.ts" />
+const IMAGE_SMALL = 0; // 34x34
+const IMAGE_MEDIUM = 1; // 64x64
+const IMAGE_LARGE = 2; // 174x174px
+const IMAGE_EXTRALARGE = 3; // 300x300px
 
 class Scrobbler
 {
@@ -7,7 +11,6 @@ class Scrobbler
 	apiKey:string;
 	format:string;
 	apiUrl:string;
-	// var IMAGE_EXTRALARGE = 3; // 300x300px
 
 	constructor()
 	{
@@ -173,7 +176,7 @@ document.addEventListener("DOMContentLoaded", function ()
 				{
 					previousAlbum = track.album;
 
-					album = new Album(track.artist, track.album, dataTrack.image[3]['#text']);
+					album = new Album(track.artist, track.album, dataTrack.image[IMAGE_LARGE]['#text']);
 					album.generateAlbumElement();
 					chart.appendAlbum(album);
 					chart.lastAlbum = album;
